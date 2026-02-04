@@ -1,0 +1,13 @@
+services:
+  vscode:
+    build:
+      context: .
+      dockerfile: vscode.Dockerfile
+    command: sleep infinity
+    ports:
+      - 8080:8080
+    user: vscode
+    volumes:
+      - ./workspace:/workspace
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
